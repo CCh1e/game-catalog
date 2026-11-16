@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Особистий каталог відеоігор Євгена: жанри, роки виходу, час проходження та статус.">
+  <meta name="author" content="Євген">
+  <title>Ігротека Євгена — каталог відеоігор</title>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+<body>
+  <header id="site-header" class="site-header">
+    <h1>Ігротека Євгена</h1>
+    <p>Студент, який пише код удень і грає у шутери та соулслайки ввечері. Тут зібрано ігри, у які я граю або хочу пройти.</p>
+
+    <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
+      <ul>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#hobbies">Хобі</a></li>
+        <li><a href="#catalog">Каталог ігор</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" id="login-button" class="login-button" aria-haspopup="dialog" aria-controls="login-dialog">Увійти</button>
+  </header>
+
+  <main id="main-content">
+    <article id="about" class="about">
+      <h2>Про мене</h2>
+      <p>Мене звати Євген, я навчаюся в Сумському державному університеті. Цікавлюся веброзробкою та Java, а у вільний час граю у відеоігри.</p>
+      <p>Найбільше люблю змагальні шутери, де вирішують реакція та командна гра, і складні ігри від FromSoftware, де кожен бос — окремий іспит.</p>
+    </article>
+
+    <section id="hobbies" class="hobbies">
+      <h2>Мої хобі</h2>
+      <ul>
+        <li>Змагальні шутери: Counter-Strike 2 та PUBG.</li>
+        <li>Соулслайки та ігри з високою складністю.</li>
+        <li>Баскетбол — і на майданчику, і в NBA 2K.</li>
+        <li>Перегляд стрімів і кіберспортивних турнірів.</li>
+      </ul>
+    </section>
+
+    <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+      <h2 id="catalog-title">Каталог відеоігор</h2>
+
+      <section id="filters" class="filters" aria-labelledby="filters-title">
+        <h3 id="filters-title">Фільтри</h3>
+        <form id="filters-form" class="filters-form" role="search">
+          <p>
+            <label for="filter-search">Пошук за назвою</label>
+            <input type="search" id="filter-search" name="q" placeholder="Наприклад, Sekiro">
+          </p>
+          <p>
+            <label for="filter-genre">Жанр</label>
+            <select id="filter-genre" name="genre">
+              <option value="">Усі жанри</option>
+              <option value="shooter">Шутер</option>
+              <option value="sports">Спорт</option>
+              <option value="soulslike">Соулслайк</option>
+              <option value="action-adventure">Екшн-пригоди</option>
+            </select>
+          </p>
+          <fieldset>
+            <legend>Мій час у грі, год</legend>
+            <label for="filter-hours-min">Від</label>
+            <input type="number" id="filter-hours-min" name="hoursMin" min="0" step="1">
+            <label for="filter-hours-max">до</label>
+            <input type="number" id="filter-hours-max" name="hoursMax" min="0" step="1">
+          </fieldset>
+          <p>
+            <input type="checkbox" id="filter-completed" name="completed" value="true">
+            <label for="filter-completed">Лише пройдені</label>
+          </p>
+          <p>
+            <label for="filter-sort">Сортування</label>
+            <select id="filter-sort" name="sort">
+              <option value="title">За назвою</option>
+              <option value="year-desc">Спершу новіші</option>
+              <option value="hours-desc">Спершу ті, у які грав найбільше</option>
+            </select>
+          </p>
+          <p>
+            <button type="submit">Застосувати</button>
+            <button type="reset">Скинути</button>
+          </p>
+        </form>
+      </section>
+
+      <ul id="game-list" class="game-list">
+        <li>
+          <article id="game-elden-ring" class="game-card" aria-labelledby="game-elden-ring-title">
+            <h3 id="game-elden-ring-title">Elden Ring</h3>
+            <img src="images/elden-ring-600.jpg"
+                 srcset="images/elden-ring-600.jpg 600w, images/elden-ring-1200.jpg 1200w"
+                 sizes="(max-width: 600px) 50vw, 300px"
+                 width="300" height="450"
+                 alt="Обкладинка гри Elden Ring"
+                 title="Elden Ring"
+                 fetchpriority="high">
+            <dl>
+              <dt>Жанр</dt>
+              <dd><data value="soulslike">Соулслайк</data></dd>
+              <dt>Платформи</dt>
+              <dd>PC, PlayStation 4/5, Xbox One, Xbox Series X|S</dd>
+              <dt>Дата виходу</dt>
+              <dd><time datetime="2022-02-25">25 лютого 2022</time></dd>
+              <dt>Мій час у грі</dt>
+              <dd><data value="60">≈ 60 год</data></dd>
+              <dt>Статус</dt>
+              <dd><data value="true">Пройдено</data></dd>
+            </dl>
+            <p>Відкритий світ від FromSoftware за участі Джорджа Мартіна: Межигір'я, десятки необов'язкових босів і повна свобода в тому, куди йти далі.</p>
+          </article>
+        </li>
+        <li>
+          <article id="game-sekiro" class="game-card" aria-labelledby="game-sekiro-title">
+            <h3 id="game-sekiro-title">Sekiro: Shadows Die Twice</h3>
+            <img src="images/sekiro-600.jpg"
+                 srcset="images/sekiro-600.jpg 600w, images/sekiro-1200.jpg 1200w"
+                 sizes="(max-width: 600px) 50vw, 300px"
+                 width="300" height="450"
+                 alt="Обкладинка гри Sekiro: Shadows Die Twice"
+                 title="Sekiro: Shadows Die Twice"
+                 loading="lazy" decoding="async">
+            <dl>
+              <dt>Жанр</dt>
+              <dd><data value="soulslike">Соулслайк</data></dd>
+              <dt>Платформи</dt>
+              <dd>PC, PlayStation 4, Xbox One</dd>
+              <dt>Дата виходу</dt>
+              <dd><time datetime="2019-03-22">22 березня 2019</time></dd>
+              <dt>Мій час у грі</dt>
+              <dd><data value="30">≈ 30 год</data></dd>
+              <dt>Статус</dt>
+              <dd><data value="true">Пройдено</data></dd>
+            </dl>
+            <p>Японія епохи Сенґоку, однорукий шинобі та бойова система, побудована на парируванні: тут не можна сховатися за щитом — лише відбивати удари в ритм.</p>
+          </article>
+        </li>
+        <li>
+          <article id="game-ghost-of-tsushima" class="game-card" aria-labelledby="game-ghost-of-tsushima-title">
+            <h3 id="game-ghost-of-tsushima-title">Ghost of Tsushima</h3>
+            <img src="images/ghost-of-tsushima-600.jpg"
+                 srcset="images/ghost-of-tsushima-600.jpg 600w, images/ghost-of-tsushima-1200.jpg 1200w"
+                 sizes="(max-width: 600px) 50vw, 300px"
+                 width="300" height="450"
+                 alt="Обкладинка гри Ghost of Tsushima"
+                 title="Ghost of Tsushima"
+                 loading="lazy" decoding="async">
+            <dl>
+              <dt>Жанр</dt>
+              <dd><data value="action-adventure">Екшн-пригоди</data></dd>
+              <dt>Платформи</dt>
+              <dd>PlayStation 4/5, PC</dd>
+              <dt>Дата виходу</dt>
+              <dd><time datetime="2020-07-17">17 липня 2020</time></dd>
+              <dt>Мій час у грі</dt>
+              <dd><data value="40">≈ 40 год</data></dd>
+              <dt>Статус</dt>
+              <dd><data value="true">Пройдено</data></dd>
+            </dl>
+            <p>Самурай Дзін Сакай захищає острів Цусіма від монгольського вторгнення й обирає між кодексом честі та шляхом примари.</p>
+          </article>
+        </li>
+        <li>
+          <article id="game-cs2" class="game-card" aria-labelledby="game-cs2-title">
+            <h3 id="game-cs2-title">Counter-Strike 2</h3>
+            <img src="images/cs2-600.jpg"
+                 srcset="images/cs2-600.jpg 600w, images/cs2-1200.jpg 1200w"
+                 sizes="(max-width: 600px) 50vw, 300px"
+                 width="300" height="450"
+                 alt="Обкладинка гри Counter-Strike 2"
+                 title="Counter-Strike 2"
+                 loading="lazy" decoding="async">
+            <dl>
+              <dt>Жанр</dt>
+              <dd><data value="shooter">Шутер</data></dd>
+              <dt>Платформи</dt>
+              <dd>PC</dd>
+              <dt>Дата виходу</dt>
+              <dd><time datetime="2023-09-27">27 вересня 2023</time></dd>
+              <dt>Мій час у грі</dt>
+              <dd><data value="0">Сюжетної кампанії немає</data></dd>
+              <dt>Статус</dt>
+              <dd><data value="false">Не пройдено</data></dd>
+            </dl>
+            <p>Командний тактичний шутер на рушії Source 2: дві команди, закладання бомби, економіка раундів і нескінченне відточування стрільби.</p>
+          </article>
+        </li>
+        <li>
+          <article id="game-pubg" class="game-card" aria-labelledby="game-pubg-title">
+            <h3 id="game-pubg-title">PUBG: Battlegrounds</h3>
+            <img src="images/pubg-600.jpg"
+                 srcset="images/pubg-600.jpg 600w, images/pubg-1200.jpg 1200w"
+                 sizes="(max-width: 600px) 50vw, 300px"
+                 width="300" height="450"
+                 alt="Обкладинка гри PUBG: Battlegrounds"
+                 title="PUBG: Battlegrounds"
+                 loading="lazy" decoding="async">
+            <dl>
+              <dt>Жанр</dt>
+              <dd><data value="shooter">Шутер</data></dd>
+              <dt>Платформи</dt>
+              <dd>PC, PlayStation 4/5, Xbox One, Xbox Series X|S</dd>
+              <dt>Дата виходу</dt>
+              <dd><time datetime="2017-12-21">21 грудня 2017</time></dd>
+              <dt>Мій час у грі</dt>
+              <dd><data value="0">Сюжетної кампанії немає</data></dd>
+              <dt>Статус</dt>
+              <dd><data value="false">Не пройдено</data></dd>
+            </dl>
+            <p>Королівська битва на сто гравців: висадка з літака, пошук спорядження, зона, що звужується, і лише один переможець.</p>
+          </article>
+        </li>
+        <li>
+          <article id="game-nba-2k27" class="game-card" aria-labelledby="game-nba-2k27-title">
+            <h3 id="game-nba-2k27-title">NBA 2K27</h3>
+            <img src="images/nba-2k27-600.jpg"
+                 srcset="images/nba-2k27-600.jpg 600w, images/nba-2k27-1200.jpg 1200w"
+                 sizes="(max-width: 600px) 50vw, 300px"
+                 width="300" height="450"
+                 alt="Обкладинка гри NBA 2K27 з Віктором Вембаньямою на фоні неонового логотипа"
+                 title="NBA 2K27"
+                 loading="lazy" decoding="async">
+            <dl>
+              <dt>Жанр</dt>
+              <dd><data value="sports">Спорт</data></dd>
+              <dt>Платформи</dt>
+              <dd>PC, PlayStation 5, Xbox Series X|S, Nintendo Switch 2</dd>
+              <dt>Дата виходу</dt>
+              <dd><time datetime="2026-09-04">4 вересня 2026</time></dd>
+              <dt>Мій час у грі</dt>
+              <dd><data value="0">Сюжетної кампанії немає</data></dd>
+              <dt>Статус</dt>
+              <dd><data value="false">Не пройдено</data></dd>
+            </dl>
+            <p>Баскетбольний симулятор із режимами MyCAREER, MyTEAM і MyNBA та спільним Містом для гравців НБА й ВНБА.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <aside id="facts" class="facts" aria-labelledby="facts-title">
+    <h2 id="facts-title">Цікаві факти</h2>
+    <ul>
+      <li>Elden Ring розійшовся тиражем понад 30 мільйонів копій.</li>
+      <li>Sekiro у 2019 році отримав нагороду «Гра року» на The Game Awards.</li>
+      <li>Перша Counter-Strike з'явилася у 1999 році як модифікація до Half-Life.</li>
+    </ul>
+    <figure>
+      <blockquote>
+        <p>«Try finger, but hole».</p>
+      </blockquote>
+      <figcaption>— повідомлення, яке гравці Elden Ring залишають один одному на землі</figcaption>
+    </figure>
+    <p>Мої профілі: <a href="https://steamcommunity.com/">Steam</a>, <a href="https://github.com/">GitHub</a>.</p>
+  </aside>
+
+  <footer id="contacts" class="site-footer">
+    <address>
+      Пошта: <a href="mailto:student@example.com">student@example.com</a>
+    </address>
+    <p>&copy; <time datetime="2026">2026</time> Євген. Лабораторна робота № 2, варіант 7.</p>
+  </footer>
+
+  <dialog id="login-dialog" class="login-dialog" aria-labelledby="login-dialog-title">
+    <h2 id="login-dialog-title">Вхід</h2>
+    <p>Форма входу та реєстрації з'явиться в наступних лабораторних роботах.</p>
+  </dialog>
+</body>
+</html>
